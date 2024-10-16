@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#textDisplay {
+    white-space: pre-wrap;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#quiz {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
