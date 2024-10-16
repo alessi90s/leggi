@@ -1,0 +1,24 @@
+{
+    "sections": [
+        {
+            "content": "Questo è il contenuto del primo paragrafo della lezione..."
+        },
+        {
+            "content": "Questo è il contenuto del secondo paragrafo della lezione..."
+        }
+        // Aggiungi altre sezioni se necessario
+    ],
+    "quiz": [
+        {
+            "question": "Domanda 1?",
+            "options": ["Risposta A", "Risposta B", "Risposta C", "Risposta D"],
+            "answer": "Risposta corretta"
+        },
+        {
+            "question": "Domanda 2?",
+            "options": ["Risposta A", "Risposta B", "Risposta C", "Risposta D"],
+            "answer": "Risposta corretta"
+        }
+        // Aggiungi altre domande se necessario
+    ]
+}
