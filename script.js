@@ -11,8 +11,13 @@ function loadFile(event) {
     if (file && file.name.endsWith('.json')) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            lessonData = JSON.parse(e.target.result);
-            startLesson();
+            try {
+                lessonData = JSON.parse(e.target.result);
+                startLesson();
+            } catch (error) {
+                alert('Errore nel parsing del file JSON.');
+                console.error(error);
+            }
         };
         reader.readAsText(file);
     } else {
@@ -26,8 +31,8 @@ function startLesson() {
 }
 
 function displaySection() {
-    const section = lessonData.sections[currentSection];
-    if (section) {
+    if (lessonData.sections && currentSection < lessonData.sections.length) {
+        const section = lessonData.sections[currentSection];
         textPosition = 0;
         document.getElementById('textDisplay').innerHTML = '';
         typingInterval = setInterval(() => typeWriter(section.content), speed);
@@ -57,6 +62,7 @@ function showQuiz() {
     quizSection.style.display = 'block';
 
     const quizDiv = document.getElementById('quiz');
+    quizDiv.innerHTML = ''; // Evita duplicazioni
     lessonData.quiz.forEach((q, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.innerHTML = `<p>${q.question}</p>`;
@@ -79,11 +85,19 @@ function gradeQuiz() {
     let score = 0;
     lessonData.quiz.forEach((q, index) => {
         const options = document.getElementsByName(`question${index}`);
+        let answered = false;
         options.forEach(option => {
-            if (option.checked && option.value === q.answer) {
-                score++;
+            if (option.checked) {
+                answered = true;
+                if (option.value === q.answer) {
+                    score++;
+                }
             }
         });
+        if (!answered) {
+            alert(`Per favore, rispondi alla domanda ${index + 1}.`);
+            return;
+        }
     });
     alert(`Hai risposto correttamente a ${score} domande su ${lessonData.quiz.length}.`);
 }
