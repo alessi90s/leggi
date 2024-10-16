@@ -1,24 +1,25 @@
 {
     "sections": [
         {
-            "content": "Questo è il contenuto del primo paragrafo della lezione..."
+            "content": "Benvenuto alla lezione di prova. In questa sezione, impareremo le basi della fisica."
         },
         {
-            "content": "Questo è il contenuto del secondo paragrafo della lezione..."
+            "content": "La fisica è la scienza che studia la natura e le sue leggi fondamentali."
+        },
+        {
+            "content": "Isaac Newton è noto per le sue leggi del moto, che hanno rivoluzionato la fisica."
         }
-        // Aggiungi altre sezioni se necessario
     ],
     "quiz": [
         {
-            "question": "Domanda 1?",
-            "options": ["Risposta A", "Risposta B", "Risposta C", "Risposta D"],
-            "answer": "Risposta corretta"
+            "question": "Chi ha formulato le leggi del moto?",
+            "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+            "answer": "Isaac Newton"
         },
         {
-            "question": "Domanda 2?",
-            "options": ["Risposta A", "Risposta B", "Risposta C", "Risposta D"],
-            "answer": "Risposta corretta"
+            "question": "Che cosa studia la fisica?",
+            "options": ["La mente umana", "La natura e le sue leggi", "Le lingue", "La storia antica"],
+            "answer": "La natura e le sue leggi"
         }
-        // Aggiungi altre domande se necessario
     ]
 }
